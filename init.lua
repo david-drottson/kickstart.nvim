@@ -58,7 +58,7 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
+-- vim.opt.list = false
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
@@ -173,13 +173,13 @@ require('lazy').setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '-' },
-        topdelete = { text = '*' },
-        changedelete = { text = '≈' },
-      },
+      -- signs = {
+      --   add = { text = '+' },
+      --   change = { text = '~' },
+      --   delete = { text = '-' },
+      --   topdelete = { text = '*' },
+      --   changedelete = { text = '≈' },
+      -- },
     },
   },
 
@@ -793,7 +793,8 @@ require('lazy').setup({
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
             group_index = 0,
           },
-          { name = 'copilot', group_index = 2 },
+          { name = 'nvim_lsp' },
+          -- { name = 'copilot', group_index = 2 },
           -- Other Sources    { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
